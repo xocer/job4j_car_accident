@@ -22,18 +22,30 @@
 <table class="table">
     <thead>
 
-    <tr>Строка</tr>
+    <th>Id</th>
+    <th>Название</th>
+    <th>Описание</th>
+    <th>Адрес</th>
 
     </thead>
     <tbody>
-    <c:forEach items="${strings}" var="string">
-        <tr></tr>
-        <td>
-            <c:out value="${string}"/>
-        </td>
+    <c:forEach items="${accidents}" var="accident">
+        <tr>
+            <td>
+                <c:out value="${accident.id}"/>
+            </td>
+            <td>
+                <c:out value="${accident.name}"/>
+            </td>
+            <td>
+                <c:out value="${accident.text}"/>
+            </td>
+            <td>
+                <c:out value="${accident.address}"/>
+            </td>
+        </tr>
     </c:forEach>
     </tbody>
-
 </table>
 </body>
 </html>

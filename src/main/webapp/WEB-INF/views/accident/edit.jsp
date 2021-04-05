@@ -19,7 +19,7 @@
 <div class="container pt-3">
     <div class="row">
         <div class="card" style="width: 100%">
-            <form action="<c:url value='/update?id=${accident.id}'/>" method="post">
+            <form action="<c:url value='/save?id=${accident.id}'/>" method="post">
 
                 <div class="form-group">
                     <label for="name">Название</label>

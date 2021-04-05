@@ -30,11 +30,4 @@ public class AccidentControl {
         model.addAttribute("accident", accidents.getById(id));
         return "accident/edit";
     }
-
-    @PostMapping("/update")
-    public String update(@ModelAttribute Accident accident,
-                         @RequestParam("id") int id) {
-        accidents.update(id, accident);
-        return "redirect:/";
-    }
 }

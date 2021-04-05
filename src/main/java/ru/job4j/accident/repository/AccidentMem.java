@@ -10,13 +10,25 @@ import java.util.HashMap;
 public class AccidentMem {
     private final HashMap<Integer, Accident> accidents = new HashMap<>();
 
-    public AccidentMem() {
-        accidents.put(1, new Accident(1, "test", "test", "test"));
-        accidents.put(2, new Accident(2, "test2", "test2", "test2"));
-        accidents.put(3, new Accident(3, "test3", "test3", "test3"));
+    {
+        accidents.put(1, new Accident( "test", "test", "test"));
+        accidents.put(2, new Accident( "test2", "test2", "test2"));
+        accidents.put(3, new Accident( "test3", "test3", "test3"));
     }
 
     public Collection<Accident> getAccidents() {
         return accidents.values();
+    }
+
+    public void create(Accident accident) {
+        accidents.put(accident.getId(), accident);
+    }
+
+    public Accident getById(int id) {
+        return accidents.get(id);
+    }
+
+    public void update(int id, Accident accident) {
+        accidents.replace(id, accident);
     }
 }

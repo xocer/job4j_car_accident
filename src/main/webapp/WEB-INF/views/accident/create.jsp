@@ -37,10 +37,19 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Тип:</label>
+                    <label>Тип: </label>
                     <select name="type.id">
                         <c:forEach var="type" items="${types}" >
                             <option value="${type.id}">${type.name}</option>
+                        </c:forEach>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label>Статьи: </label>
+                    <select name="rIds" multiple>
+                        <c:forEach var="rule" items="${rules}" >
+                            <option value="${rule.id}">${rule.name}</option>
                         </c:forEach>
                     </select>
                 </div>

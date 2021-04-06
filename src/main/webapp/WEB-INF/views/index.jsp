@@ -27,6 +27,7 @@
     <th>Тип происшествия</th>
     <th>Описание</th>
     <th>Адрес</th>
+    <th>Статьи</th>
 
     </thead>
     <tbody>
@@ -46,6 +47,11 @@
             </td>
             <td>
                 <c:out value="${accident.address}"/>
+            </td>
+            <td>
+                <c:forEach items="${accident.rules}" var="rule">
+                    <c:out value="${rule.name}"/><br>
+                </c:forEach>
             </td>
         </tr>
     </c:forEach>

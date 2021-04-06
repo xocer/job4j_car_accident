@@ -24,6 +24,7 @@
 
     <th>Id</th>
     <th>Название</th>
+    <th>Тип происшествия</th>
     <th>Описание</th>
     <th>Адрес</th>
 
@@ -36,6 +37,9 @@
             </td>
             <td>
                 <c:out value="${accident.name}"/>
+            </td>
+            <td>
+                <c:out value="${accident.type.name}"/>
             </td>
             <td>
                 <c:out value="${accident.text}"/>

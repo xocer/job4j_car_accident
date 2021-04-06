@@ -6,14 +6,13 @@ import ru.job4j.accident.model.AccidentType;
 import ru.job4j.accident.model.Rule;
 
 import java.util.*;
+import java.util.concurrent.ConcurrentHashMap;
 
 @Repository
 public class AccidentMem {
-    private final HashMap<Integer, Accident> accidents = new HashMap<>();
-    private final HashMap<Integer, AccidentType> types = new HashMap<>();
-    private final HashMap<Integer, Rule> rules = new HashMap<>();
-
-
+    private final Map<Integer, Accident> accidents = new ConcurrentHashMap<>();
+    private final Map<Integer, AccidentType> types = new ConcurrentHashMap<>();
+    private final Map<Integer, Rule> rules = new ConcurrentHashMap<>();
 
     {
         rules.put(1, Rule.of(1, "Статья. 1"));

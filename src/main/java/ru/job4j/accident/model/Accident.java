@@ -1,10 +1,12 @@
 package ru.job4j.accident.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.Set;
 
 @Data
+@NoArgsConstructor
 public class Accident {
     private int id;
     private String name;

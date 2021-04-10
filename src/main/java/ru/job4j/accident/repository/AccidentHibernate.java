@@ -25,7 +25,7 @@ public class AccidentHibernate {
     public List<Accident> getAll() {
         try (Session session = sf.openSession()) {
             return session
-                    .createQuery("from Accident", Accident.class)
+                    .createQuery("select a from Accident a", Accident.class)
                     .list();
         }
     }

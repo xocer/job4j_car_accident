@@ -31,6 +31,9 @@
 
     </thead>
     <tbody>
+    <div>
+        Login as : ${user.username}
+    </div>
     <c:forEach items="${accidents}" var="accident">
         <tr>
             <td>

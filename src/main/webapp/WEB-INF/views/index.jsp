@@ -16,50 +16,68 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
     <title>Accident</title>
 </head>
-<body class="container">
-<table class="table">
-    <thead>
+<body>
+<div class="container pt-3">
 
-    <th>Id</th>
-    <th>Название</th>
-    <th>Тип происшествия</th>
-    <th>Описание</th>
-    <th>Адрес</th>
-    <th>Статьи</th>
-
-    </thead>
-    <tbody>
-    <div>
-        Login as : ${user.username}
+    <div style="text-align: right">
+        <h3 style="float: left">Accidents list</h3>
+        <strong>${user.username} | </strong>
+        <a class="btn btn-outline-danger btn-sm" style="padding: 1px" href="<c:url value='/logout'/>">sign out</a>
     </div>
-    <c:forEach items="${accidents}" var="accident">
+    <br>
+
+    <table class="table table-striped table-bordered">
+        <thead>
         <tr>
-            <td>
-                <a href="<c:url value='/edit?id=${accident.id}'/>" >ред.</a>
-            </td>
-            <td>
-                <c:out value="${accident.name}"/>
-            </td>
-            <td>
-                <c:out value="${accident.type.name}"/>
-            </td>
-            <td>
-                <c:out value="${accident.text}"/>
-            </td>
-            <td>
-                <c:out value="${accident.address}"/>
-            </td>
-            <td>
-                <c:forEach items="${accident.rules}" var="rule">
-                    <c:out value="${rule.name}"/><br>
-                </c:forEach>
-            </td>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Address</th>
+            <th>Rule</th>
+            <th>Actions</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
-<a href="<c:url value='/create'/>">Добавить инцидент</a>
+        </thead>
+        <tbody>
+
+        <c:forEach items="${accidents}" var="accident">
+            <tr>
+                <td>
+                    <c:out value="${accident.id}"/>
+                </td>
+                <td>
+                    <c:out value="${accident.name}"/>
+                </td>
+                <td>
+                    <c:out value="${accident.type.name}"/>
+                </td>
+                <td>
+                    <c:out value="${accident.text}"/>
+                </td>
+                <td>
+                    <c:out value="${accident.address}"/>
+                </td>
+                <td>
+                    <c:forEach items="${accident.rules}" var="rule">
+                        <c:out value="${rule.name}"/><br>
+                    </c:forEach>
+                </td>
+                <td class="text-center">
+                    <a href="<c:url value='/edit?id=${accident.id}'/>">
+                        <i class="fa fa-edit mr-3"></i>
+                    </a>
+                    <a href="<c:url value='/delete?id=${accident.id}'/>">
+                        <i class="fa fa-minus-circle mr-3"></i>
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
+    <a href="<c:url value='/create'/>">Add accident</a>
+</div>
 </body>
 </html>

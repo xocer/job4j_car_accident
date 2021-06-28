@@ -17,10 +17,10 @@ public class Accident {
     private String name;
     private String text;
     private String address;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.REMOVE)
     @JoinColumn(name = "type_id")
     private AccidentType type;
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     private Set<Rule> rules;
 
     public Accident(String name, String text, String address) {

@@ -25,6 +25,10 @@ public class RegControl {
 
     @PostMapping("/reg")
     public String save(@ModelAttribute User user) {
+        final User userByUsername = users.findUserByUsername(user.getUsername());
+        if (userByUsername != null) {
+            return "redirect:/reg";
+        }
         user.setEnabled(true);
         user.setPassword(encoder.encode(user.getPassword()));
         user.setAuthority(authorities.findByAuthority("ROLE_USER"));

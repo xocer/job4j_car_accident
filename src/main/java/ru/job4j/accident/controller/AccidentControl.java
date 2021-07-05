@@ -5,7 +5,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ru.job4j.accident.model.Accident;
 import ru.job4j.accident.model.Rule;
-import ru.job4j.accident.repository.AccidentMem;
 import ru.job4j.accident.service.AccidentService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -55,16 +54,4 @@ public class AccidentControl {
         service.deleteAccident(id);
         return "redirect:/";
     }
-
-//    @PostMapping("/update")
-//    public String update(@ModelAttribute Accident accident, HttpServletRequest req) {
-//        String[] rulesId = req.getParameterValues("rulesId");
-//        Set<Rule> rules = new HashSet<>();
-//        Arrays.stream(rulesId).
-//                forEach(r -> rules.add(service.getRuleById(Integer.parseInt(r))));
-//        accident.setRules(rules);
-//        accident.setType(service.getTypeById(accident.getType().getId()));
-//        service.createAccident(correctAccident);
-//        return "redirect:/";
-//    }
 }

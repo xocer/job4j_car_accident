@@ -71,26 +71,8 @@
                     <button type="button" onclick="checkLog();" class="btn btn-success">Sign in</button>
                     <a class="btn btn-primary" href="<c:url value='/reg'/>">Sign up</a>
 
-
-                    <%--                    <table>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>UserName:</td>--%>
-                    <%--                            <td><input type='text' name='username'></td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td>Password:</td>--%>
-                    <%--                            <td><input type='password' name='password'/></td>--%>
-                    <%--                        </tr>--%>
-                    <%--                        <tr>--%>
-                    <%--                            <td colspan='2'><input name="submit" type="submit" value="submit"/></td>--%>
-                    <%--                        </tr>--%>
-                    <%--                    </table>--%>
                     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
                 </form>
-
-                <%--                <form action="<c:url value='/reg'/>">--%>
-                <%--                    <button type="submit">Регистрация</button>--%>
-                <%--                </form>--%>
 
             </div>
         </div>

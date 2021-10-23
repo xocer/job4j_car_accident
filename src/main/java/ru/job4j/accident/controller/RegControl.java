@@ -37,7 +37,7 @@ public class RegControl {
     }
 
     @GetMapping("/reg")
-    public String reg(@ModelAttribute Accident accident) {
+    public String reg() {
         return "reg";
     }
 }
